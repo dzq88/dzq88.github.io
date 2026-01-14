@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dzq88">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、Python环境搭建下载自己电脑所对应的Python软件Download Python | Python.org 点击安装 勾选以下两项进行安装 123Use admin privileges when installing py.exe #安装Python使用管理员权限Add python.exe to PATH #环境变量  win+r输入“cmd” 检测python是否安装成功的版本 在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片型PDF提取文字环境搭建">
+<meta property="og:url" content="http://example.com/page/2025/06/23/21/11.html">
+<meta property="og:site_name" content="dzq88">
+<meta property="og:description" content="一、Python环境搭建下载自己电脑所对应的Python软件Download Python | Python.org 点击安装 勾选以下两项进行安装 123Use admin privileges when installing py.exe #安装Python使用管理员权限Add python.exe to PATH #环境变量  win+r输入“cmd” 检测python是否安装成功的版本 在">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-23T21:11:09.000Z">
+<meta property="article:modified_time" content="2026-01-14T14:37:13.228Z">
+<meta property="article:author" content="dzq88">
+<meta property="article:tag" content="PDF">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>图片型PDF提取文字环境搭建 - dzq88</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>dzq88</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="图片型PDF提取文字环境搭建"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-23 21:11" pubdate>
+          2025年6月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">图片型PDF提取文字环境搭建</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一、Python环境搭建"><a href="#一、Python环境搭建" class="headerlink" title="一、Python环境搭建"></a>一、Python环境搭建</h1><h3 id="下载自己电脑所对应的Python软件"><a href="#下载自己电脑所对应的Python软件" class="headerlink" title="下载自己电脑所对应的Python软件"></a>下载自己电脑所对应的Python软件</h3><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/">Download Python | Python.org</a></p>
+<p>点击安装</p>
+<p>勾选以下两项进行安装</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">Use <span class="hljs-keyword">admin</span> <span class="hljs-keyword">privileges</span> <span class="hljs-keyword">when</span> installing py.exe #安装Python使用管理员权限<br><span class="hljs-keyword">Add</span> python.exe <span class="hljs-keyword">to</span> <span class="hljs-type">PATH</span> #环境变量<br><br></code></pre></td></tr></table></figure>
+
+<p>win+r输入“cmd”</p>
+<p><strong>检测python是否安装成功的版本</strong></p>
+<p>在控制台输入 python –version</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">python</span> --<span class="hljs-keyword">version</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>检测pip是否安装成功</strong></p>
+<p>在控制台输入 pip –version</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">pip <span class="hljs-comment">--version</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>步骤2：在命令提示符里输入pip list</strong></p>
+<p>安装加载进度条的包</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> tqdm<br></code></pre></td></tr></table></figure>
+
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a><strong>安装包</strong></h3><p>在命令提示符里输入“pip install 包的名称”即可安装包</p>
+<p>查看安装了哪些包</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">pip list</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a><strong>卸载包</strong></h3><p>在命令提示符里输入“pip uninstall 包的名称”即可卸载包</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">pip</span> uninstall 包的名称<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用Python隔离环境venv<br>建立venv的配置如下：</li>
+</ol>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs mel"><span class="hljs-keyword">python</span>(<span class="hljs-number">3</span>) -m venv &#123;vitualenv_ name&#125;<br>示例：随便选一个电脑磁盘新建一个<span class="hljs-keyword">python</span>工作目录，在工作目录顶部地址栏输入CMD+回车，打开管理员控制台输入以下命令并回车建立独立的<span class="hljs-keyword">python</span>隔离工作环境<br><span class="hljs-keyword">python</span> -m venv venv<br>关闭之前打开的CMD命令行界面窗口<br>在工作目录有venv的文件夹顶部地址栏输入CMD+回车，打开管理员控制台启用venv环境命令如下：<br>.\venv\Scripts\activate<br>然后随便pip install装包，装的包不好用或者带毒，可以删除venv整个隔离文件夹环境,再从新建立venv环境即可<br>结束venv环境命令,在venv的模式下输入以下命令：<br>deactivate<br><br>这样做的好处：当你以后不管pip install安装什么<span class="hljs-keyword">python</span>包，都不会污染整个电脑的<span class="hljs-keyword">python</span>环境<br>以下是macOS或Linux系统安装隔离环境的命令：<br><span class="hljs-keyword">source</span> . /venv/bin/activate # Bash/ZSH (macOS + most Linux distro)<br><br>. /venv/bin/activate # Windows<br><br></code></pre></td></tr></table></figure>
+
+<h1 id="二、在-Windows-上安装ocrmypdf（主角）"><a href="#二、在-Windows-上安装ocrmypdf（主角）" class="headerlink" title="二、在 Windows 上安装ocrmypdf（主角）"></a><strong>二、在 Windows 上安装ocrmypdf（主角）</strong></h1><p> 本机 Windows</p>
+<blockquote>
+<p>注意: 其中一些步骤将需要管理员权限。</p>
+</blockquote>
+<p>对于 Windows，您必须安装以下软件：<br>Python 64 位</p>
+<p>Tesseract 64 位</p>
+<p>Ghostscript 64 位</p>
+<p>1.在Python隔离环境的venv目录顶部地址栏输入CMD+回车，打开管理员控制台启用venv环境命令如下：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">.\venv\Scripts\<span class="hljs-built_in">activate</span><br></code></pre></td></tr></table></figure>
+
+<p>2.使用 winget 包管理器安装Tesseract 64 位：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">winget install -e <span class="hljs-comment">--id UB-Mannheim.TesseractOCR</span><br></code></pre></td></tr></table></figure>
+
+<p>3.您需要手动安装 Ghostscript，因为它不支持自动 安装。<br><a target="_blank" rel="noopener" href="https://ghostscript.com/releases/gsdnld.html">Ghostscript 下载页面</a></p>
+<p>点击下载好的gs10051w64.exe以管理员的身份进行安装</p>
+<p>4.如果您使用 WinGet 安装了 Python和TesseractOCR，请改用以下命令安装ocrmypdf：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">py -m pip <span class="hljs-keyword">install</span> ocrmypdf<br></code></pre></td></tr></table></figure>
+
+<h1 id="三、在Python隔离环境的venv中使用OCRMYPDF方法"><a href="#三、在Python隔离环境的venv中使用OCRMYPDF方法" class="headerlink" title="三、在Python隔离环境的venv中使用OCRMYPDF方法"></a>三、在Python隔离环境的venv中使用OCRMYPDF方法</h1><p>1.在Python隔离环境的venv目录顶部地址栏输入CMD+回车，打开管理员控制台启用venv环境命令如下：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">.\venv\Scripts\<span class="hljs-built_in">activate</span><br></code></pre></td></tr></table></figure>
+
+<p>2.查看OCRMYPDF 内置帮助。</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">ocrmypdf <span class="hljs-comment">--help</span><br></code></pre></td></tr></table></figure>
+
+<p>3.复制需要转换的图片类型的PDF文件到venv所在的文件夹内</p>
+<blockquote>
+<p>例如：本人需要转换图片类型的PDF文件名叫《需转换.pdf》</p>
+</blockquote>
+<p>4.添加 OCR 图层并转换为 PDF&#x2F;A</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">ocrmypdf 需转换<span class="hljs-string">.pdf</span> 已转换<span class="hljs-string">.pdf</span><br></code></pre></td></tr></table></figure>
+
+<p>5.生成包含 OCR 文本的 PDF 和文本文件<br>这将生成一个名为 “output.pdf” 的文件和一个配套文本文件 命名为 “output.txt”。</p>
+<blockquote>
+<p>弊端：已转换为.txt会乱码</p>
+</blockquote>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">ocrmypdf <span class="hljs-params">--sidecar</span> 已转换为<span class="hljs-string">.txt</span> 需转换<span class="hljs-string">.pdf</span> 已转换为可复制和编辑的<span class="hljs-string">.pdf</span><br></code></pre></td></tr></table></figure>
+
+<p>6.解决已转换为.txt会乱码的问题<br>下载TesseractOCR的语言和 脚本模型<br><a target="_blank" rel="noopener" href="https://github.com/tesseract-ocr/tessdata_fast">脚本模型</a><br>说明：<br>对于 Tesseract 4，包括 以下语言：tessdata_fast</p>
+<p>afr （南非荷兰语）， amh （阿姆哈拉语）， ara （阿拉伯语）， asm （阿萨姆语）， aze （阿塞拜疆语）， aze_cyrl （阿塞拜疆语 - 西里尔语）， bel （白俄罗斯语）， ben （孟加拉语）， bod （藏语）， bos （波斯尼亚语）， bre （布列塔尼语）， bul （保加利亚语）， cat （加泰罗尼亚语;巴伦西亚语）， ceb （宿务语）， ces （捷克语）， chi_sim （简体中文）， chi_tra （繁体中文）， chr （切罗基语）， cos （科西嘉语）， cym （威尔士语）， dan （丹麦语）， deu （德语）， deu_latf （德语 Fraktur 拉丁语）， div （迪维希语）， dzo （宗卡）， ell （希腊语， 现代， 1453-）， eng （英语）， enm（英语，中古语，1100-1500 年），epo（世界语），equ（数学&#x2F;方程式检测模块），est（爱沙尼亚语），eus（巴斯克语），fas（波斯语），fao（法罗语），fil（菲律宾语），fin（芬兰语），fra（法语），frm（法语，中古语，约 1400-1600 年），fry（西弗里斯兰语），gla（苏格兰盖尔语），gle（爱尔兰语），glg（加利西亚语）， grc（希腊语，古代，至 1453 年）、guj（古吉拉特语）、hat（海地语;海地克里奥尔语）、heb（希伯来语）、hin（印地语）、hrv（克罗地亚语）、hun（匈牙利语）、hye（亚美尼亚语）、iku（因纽特语）、ind（印度尼西亚语）、isl（冰岛）、ita（意大利语）、ita_old（意大利语 - 旧）、jav（爪哇语）、jpn（日语）、kan（卡纳达语）、kat（格鲁吉亚语）、kat_old（格鲁吉亚语 - 旧）、kaz （哈萨克语）、khm（中高棉语）、kir（吉尔吉斯语;吉尔吉斯语）、kmr（库尔德语 Kurmanji）、kor（韩语）、kor_vert（韩语垂直）、lao（老挝语）、lat（拉丁语）、lav（拉脱维亚语）、lit（立陶宛语）、ltz（卢森堡语）、mal（马拉雅拉姆语）、mar（马拉地语）、mkd（马其顿语）、mlt（马耳他语）、mon（蒙古语）、mri（毛利语）、msa（马来语）、mya（缅甸语）、nep （尼泊尔语）， nld （荷兰语;佛兰芒语）、nor（挪威语）、oci（奥克西坦语 1500 年后）、ori（奥里雅语）、osd（方向和脚本检测模块）、pan（旁遮普语;旁遮普语）、pol （波兰语）、por （葡萄牙语）、pus （普什图语;普什图语）、que （克丘亚语）、ron （罗马尼亚语;摩尔达维亚语;摩尔多瓦语）、rus （俄语）、san （梵语）、sin （僧伽罗语;僧伽罗语）、slk（斯洛伐克语）、slv（斯洛文尼亚语）、snd（信德语）、spa（西班牙语;卡斯蒂利亚语）、spa_old（西班牙语;卡斯蒂利亚语 - 古）、sqi（阿尔巴尼亚语）、srp（塞尔维亚语）、srp_latn（塞尔维亚语 - 拉丁语）、sun（巽他语）、swa（斯瓦希里语）、swe（瑞典语）、syr（叙利亚语）、tam（泰米尔语）、tat（鞑靼语）、tel（泰卢固语）、tgk（塔吉克语）、tha（泰语）、tir（提格里尼亚语）、ton（汤加）、tur（土耳其语）、uig（维吾尔语;维吾尔语）、ukr（乌克兰语）、urd（乌尔都语）、uzb（乌兹别克语）、uzb_cyrl语（乌兹别克语 - 西里尔语）、vie（越南语）、yid（意第绪语）、yor（约鲁巴语）</p>
+<blockquote>
+<p>将下载的压缩包进行解压，复制chi_sim开头的中文简体语言脚本模型放入类似于C:\Program Files\Tesseract-OCR\tessdata这样的文件夹内</p>
+</blockquote>
+<p>7.现在愉快的把图片类PDF转换为TXT文件和普通PDF文件</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">ocrmypdf -l chi_sim <span class="hljs-params">--sidecar</span> 已转换为<span class="hljs-string">.txt</span> 需转换<span class="hljs-string">.pdf</span> 已转换为可复制和编辑的<span class="hljs-string">.pdf</span><br><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>备注：当PDF文件名有乱七八糟的各种符合时，需要更改PDF文件名，再进行转换</p>
+</blockquote>
+<p>8.测试参数 –skip-text （慢）</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">ocrmypdf <span class="hljs-params">--skip-text</span> 可编辑的<span class="hljs-string">.pdf</span> 变成可编辑的_OCR.pdf<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果要把可编辑的PDF文件转换成TXT文件，会报如下错误：<br>页面已包含文本！- 中止（使用 –force-ocr 强制 OCR;另请参阅参数 –skip-text 和 –redo-ocr 的帮助</p>
+</blockquote>
+<p> 9.测试参数 –redo-ocr<br> <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">ocrmypdf <span class="hljs-params">--redo-ocr</span> 可编辑的<span class="hljs-string">.pdf</span> 变成可编辑的_OCR.pdf<br></code></pre></td></tr></table></figure></p>
+<hr>
+<p>欢迎光临本站！</p>
+<hr>
+<p>本站主要记录一些个人所学的内容。</p>
+<hr>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/PDF/" class="category-chain-item">PDF</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PDF/" class="print-no-link">#PDF</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>图片型PDF提取文字环境搭建</div>
+      <div>http://example.com/page/2025/06/23/21/11.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>dzq88</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/page/2025/06/28/22/57.html" title="浏览中文独立个人博客有感">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">浏览中文独立个人博客有感</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/page/2025/06/08/23/23.html" title="一瓶珠江啤酒差点引发一场血案">
+                        <span class="hidden-mobile">一瓶珠江啤酒差点引发一场血案</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"BPkOS3pmXfT74qEy262M60hO-MdYXbMMI","appKey":"dnbkWPBTir2qFiQ3xZrZoLUz","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://bpkos3pm.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>   
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

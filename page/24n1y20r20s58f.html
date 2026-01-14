@@ -1,0 +1,802 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dzq88">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="虽然很早就知道下载神器 Aria2，但一直没有认真研究使用过。前几天下载百度网盘资料，需要用到 Aria2，便研究了一下。本文教程参考了 PC 端 Win10 安装 Aria2 并配置 AriaNG 客户端 – 老柴的博客 ，并在其基础上加以补充。 一.准备工作1.下载 Aria2点这里 Releases · aria2&#x2F;aria2 · GitHub 下载，如下图。      下载完成解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Win10_Aria_配置">
+<meta property="og:url" content="http://example.com/page/24n1y20r20s58f.html">
+<meta property="og:site_name" content="dzq88">
+<meta property="og:description" content="虽然很早就知道下载神器 Aria2，但一直没有认真研究使用过。前几天下载百度网盘资料，需要用到 Aria2，便研究了一下。本文教程参考了 PC 端 Win10 安装 Aria2 并配置 AriaNG 客户端 – 老柴的博客 ，并在其基础上加以补充。 一.准备工作1.下载 Aria2点这里 Releases · aria2&#x2F;aria2 · GitHub 下载，如下图。      下载完成解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\tupian\1.jpg">
+<meta property="og:image" content="d:\tupian\2.jpg">
+<meta property="og:image" content="d:\tupian\3.jpg">
+<meta property="og:image" content="d:\tupian\4.jpg">
+<meta property="og:image" content="d:\tupian\5.jpg">
+<meta property="og:image" content="d:\tupian\6.jpg">
+<meta property="og:image" content="d:\tupian\7.jpg">
+<meta property="article:published_time" content="2024-01-20T20:58:51.000Z">
+<meta property="article:modified_time" content="2026-01-14T14:37:13.227Z">
+<meta property="article:author" content="dzq88">
+<meta property="article:tag" content="下载器">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="d:\tupian\1.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Win10_Aria_配置 - dzq88</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>dzq88</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Win10_Aria_配置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-20 20:58" pubdate>
+          2024年1月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          39 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Win10_Aria_配置</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>虽然很早就知道下载神器 Aria2，但一直没有认真研究使用过。前几天下载百度网盘资料，需要用到 Aria2，便研究了一下。本文教程参考了 <a target="_blank" rel="noopener" href="https://chaisw.cn/blog/1906.html" title="PC 端 Win10 安装 Aria2 并配置 AriaNG 客户端 – 老柴的博客">PC 端 Win10 安装 Aria2 并配置 AriaNG 客户端 – 老柴的博客</a> ，并在其基础上加以补充。</p>
+<h2 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="一.准备工作"></a>一.准备工作</h2><h3 id="1-下载-Aria2"><a href="#1-下载-Aria2" class="headerlink" title="1.下载 Aria2"></a>1.下载 Aria2</h3><p>点这里 <a target="_blank" rel="noopener" href="https://github.com/aria2/aria2/releases" title="Releases · aria2/aria2 · GitHub">Releases · aria2&#x2F;aria2 · GitHub</a> 下载，如下图。</p>
+<img src="D:\tupian\1.jpg" srcset="/img/loading.gif" lazyload alt="1" style="zoom:25%;" />
+
+
+
+<p> 下载完成解压缩（推荐使用7-zip <a target="_blank" rel="noopener" href="https://www.7-zip.org/" title="7-Zip">7-Zip</a> ）。在其他路径新建一个文件夹”Aria2“（路径不要有中文和空格)，把刚刚解压缩出的“aria2c.exe”复制进去，我这里放到了”D:\Aria2\aria2c.exe”。</p>
+<h3 id="2-下载-AriaNg-Native"><a href="#2-下载-AriaNg-Native" class="headerlink" title="2.下载 AriaNg Native"></a>2.下载 AriaNg Native</h3><p>点这里下载 <a target="_blank" rel="noopener" href="https://github.com/mayswind/AriaNg-Native/releases" title="Releases · mayswind/AriaNg-Native · GitHub">Releases · mayswind&#x2F;AriaNg-Native · GitHub</a> ，如下图。</p>
+<img src="D:\tupian\2.jpg" srcset="/img/loading.gif" lazyload alt="2" style="zoom:25%;" />
+
+<p>这里推荐下载免安装版，便于后续迁移。下载完成后解压缩，把解压缩后的文件夹重命名为”AriaNg_Native“，并移动到上面新建的”Aria2“文件夹中，如下图。</p>
+<img src="D:\tupian\3.jpg" srcset="/img/loading.gif" lazyload alt="3" style="zoom:25%;" />
+
+<h2 id="二-配置-Aria2"><a href="#二-配置-Aria2" class="headerlink" title="二.配置 Aria2"></a>二.配置 Aria2</h2><h3 id="1-创建相关文件"><a href="#1-创建相关文件" class="headerlink" title="1.创建相关文件"></a>1.创建相关文件</h3><p>在“aria2c.exe”所在文件夹，新建下面4个空文件（先把资源管理器—查看—文件拓展名勾上，右键新建—文本文档—重命名为下列名称）。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">Aria2.<span class="hljs-keyword">log</span> （日志文件）<br>aria2.<span class="hljs-keyword">session</span> （用于记录下载历史，以便断点续传）<br>aria2.conf （配置文件）<br><span class="hljs-keyword">start</span>.vbs（启动脚本）<br></code></pre></td></tr></table></figure>
+
+<img src="D:\tupian\4.jpg" srcset="/img/loading.gif" lazyload alt="4" style="zoom:25%;" />
+
+<h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2.修改配置文件"></a>2.修改配置文件</h3><p>用文本编辑器（比如 <a target="_blank" rel="noopener" href="https://github.com/rizonesoft/Notepad3/releases" title="Notepad3">Notepad3</a>）打开刚才新建的<code>aria2.conf</code>文件，复制粘贴下面的代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#################</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># 井号开头的为注释内容，选项都有相应的注释说明，根据需要修改</span><br><span class="hljs-comment"># 被注释的选项填写的是默认值，建议在需要修改时再删掉注释</span><br><span class="hljs-comment"># 该配置引用了部分&#x27;Aria2完美配置&#x27; https://github.com/P3TERX/aria2.conf</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment">#################</span><br><br><span class="hljs-comment">### 文件保存设置 ###</span><br><br><span class="hljs-comment"># 下载目录，可使用绝对路径或相对路径，务必修改成自己的下载路径</span><br><span class="hljs-built_in">dir</span>=E:\Downloads\Aria2<br><br><span class="hljs-comment"># 日志文件的保存路径</span><br><span class="hljs-built_in">log</span>=D:\Aria2\Aria2.<span class="hljs-built_in">log</span><br>log-level=error<br><br><span class="hljs-comment"># 启用磁盘缓存，0为禁用缓存，默认:16M，最大64M</span><br><span class="hljs-comment"># 磁盘缓存的作用是把下载的数据块临时存储在内存中，然后集中写入硬盘，以减少磁盘 I/O ，提升读写性能，延长硬盘寿命</span><br><span class="hljs-comment"># 建议在有足够的内存空闲情况下适当增加，但不要超过剩余可用内存空间大小</span><br><span class="hljs-comment"># 此项值仅决定上限，实际对内存的占用取决于网速带宽和设备性能等其它因素</span><br>disk-cache=32M<br><br><span class="hljs-comment"># 文件预分配可以帮助机械硬盘有效降低磁盘碎片，提升磁盘读写性能，延长磁盘寿命</span><br><span class="hljs-comment"># 默认：prealloc，可选：none，prealloc，trunc，falloc</span><br><span class="hljs-comment"># prealloc 分配速度慢，falloc 和 trunc 则需要文件系统和内核支持，不推荐使用</span><br><span class="hljs-comment"># btrfs、xfs、NTFS（仅 MinGW 编译版本）等文件系统建议设置为 falloc</span><br><span class="hljs-comment"># Ext3/4（具有扩展支持）建议 trunc</span><br><span class="hljs-comment"># 固态硬盘不需要预分配，只建议设置为 none，否则可能会导致双倍文件大小的数据写入，从而影响寿命</span><br><span class="hljs-comment"># MacOS 需要注释此项</span><br>file-allocation=none<br><br><span class="hljs-comment"># 文件预分配大小限制</span><br><span class="hljs-comment"># 小于此选项值大小的文件不预分配空间，单位 K 或 M，默认：5M</span><br><span class="hljs-comment"># no-file-allocation-limit=32M</span><br><br><span class="hljs-comment"># 检查完整性</span><br>check-integrity=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 断点续传</span><br><span class="hljs-built_in">continue</span>=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 始终尝试断点续传，无法断点续传则终止下载，默认：true</span><br>always-resume=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 不支持断点续传的 URI 数值，当 always-resume=false 时生效</span><br><span class="hljs-comment"># 达到这个数值将从头开始下载，值为 0 时所有 URI 不支持断点续传时才从头开始下载</span><br><span class="hljs-comment"># max-resume-failure-tries=0</span><br><br><span class="hljs-comment"># 获取服务器文件时间，默认:false</span><br>remote-time=<span class="hljs-literal">true</span><br><br><span class="hljs-comment">### 进度保存相关设置 ###</span><br><br><span class="hljs-comment"># 从会话文件中读取下载任务</span><br>input-file=D:\Aria2\aria2.session<br><br><span class="hljs-comment"># 会话文件保存路径</span><br><span class="hljs-comment"># Aria2 退出时或指定的时间间隔会保存`错误/未完成`的下载任务到会话文件</span><br>save-session=D:\Aria2\aria2.session<br><br><span class="hljs-comment"># 任务状态改变后保存会话的间隔时间（秒），0 为仅在进程正常退出时保存，默认:0</span><br><span class="hljs-comment"># 为了及时保存任务状态、防止任务丢失，此项值只建议设置为 1</span><br>save-session-interval=1<br><br><span class="hljs-comment"># 自动保存任务进度到控制文件(*.aria2)的间隔时间（秒）</span><br><span class="hljs-comment"># 0 为仅在进程正常退出时保存，默认：60</span><br><span class="hljs-comment"># 此项值也会间接影响从内存中把缓存的数据写入磁盘的频率</span><br><span class="hljs-comment"># 想降低磁盘 IOPS (每秒读写次数)则提高间隔时间</span><br><span class="hljs-comment"># 想在意外非正常退出时尽量保存更多的下载进度则降低间隔时间</span><br><span class="hljs-comment"># 非正常退出：进程崩溃、系统崩溃、SIGKILL 信号、设备断电等</span><br>auto-save-interval=20<br><br><span class="hljs-comment"># 强制保存，即使任务已完成也保存信息到会话文件，默认：false</span><br><span class="hljs-comment"># 开启后会在任务完成后保留 .aria2 文件，文件被移除且任务存在的情况下重启后会重新下载</span><br><span class="hljs-comment"># 关闭后已完成的任务列表会在重启后清空</span><br>force-save=<span class="hljs-literal">false</span><br><br><span class="hljs-comment">### 下载连接相关 ###</span><br><br><span class="hljs-comment"># 文件未找到重试次数，默认：0 (禁用)</span><br><span class="hljs-comment"># 重试时同时会记录重试次数，所以也需要设置 max-tries 这个选项</span><br>max-file-not-found=5<br><br><span class="hljs-comment"># 最大尝试次数，0 表示无限，默认:5</span><br>max-tries=5<br><br><span class="hljs-comment"># 重试等待时间（秒），默认:0 (禁用)</span><br>retry-wait=15<br><br><span class="hljs-comment"># 连接超时时间（秒）。默认：60</span><br>connect-timeout=30<br><br><span class="hljs-comment"># 超时时间（秒）。默认：60</span><br><span class="hljs-built_in">timeout</span>=30<br><br><span class="hljs-comment"># 最大同时下载任务数，运行时可修改，默认:5</span><br><span class="hljs-comment">#max-concurrent-downloads=5</span><br><br><span class="hljs-comment"># 同一服务器最大连接线程数，添加时可指定，默认：1</span><br><span class="hljs-comment"># 最大值为 16，且受限于单任务最大连接线程数 split 所设定的值</span><br>max-connection-per-server=16<br><br><span class="hljs-comment"># 单个任务最大线程数，添加时可指定，默认:5</span><br><span class="hljs-built_in">split</span>=8<br><br><span class="hljs-comment"># 最小文件分片大小，添加时可指定，取值范围1M -1024M，默认：20M</span><br><span class="hljs-comment"># 比如此项值为 10M，当文件为 20MB 会分成两段并使用两个来源下载，文件为 15MB 则只使用一个来源下载</span><br><span class="hljs-comment"># 理论上值越小使用下载分段就越多，所能获得的实际线程数就越大，下载速度就越快，但受限于所下载文件服务器的策略</span><br>min-split-size=8M<br><br><span class="hljs-comment"># HTTP/FTP 下载分片大小，所有分割都必须是此项值的倍数</span><br><span class="hljs-comment"># 最小值为 1M (增强版为 1K)，默认：1M</span><br>piece-length=1M<br><br><span class="hljs-comment"># 允许分片大小变化，默认：false</span><br><span class="hljs-comment"># false：当分片大小与控制文件中的不同时将会中止下载</span><br><span class="hljs-comment"># true：丢失部分下载进度继续下载</span><br>allow-piece-length-change=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 全局最大下载速度限制，运行时可修改，默认：0 (无限制)</span><br>max-overall-download-limit=0<br><br><span class="hljs-comment"># 全局最大上传速度限制，运行时可修改，默认：0 (无限制)</span><br><span class="hljs-comment"># 设置过低可能影响 BT 下载速度</span><br>max-overall-upload-limit=64K<br><br><span class="hljs-comment"># 单任务下载速度限制，默认：0 (无限制)</span><br>max-download-limit=0<br><br><span class="hljs-comment"># 单任务上传速度限制，默认：0 (无限制)</span><br>max-upload-limit=32K<br><br><span class="hljs-comment"># 禁用 IPv6，默认:false</span><br>disable-ipv6=<span class="hljs-literal">false</span><br><br><span class="hljs-comment"># URI 复用，默认: true</span><br>reuse-uri=<span class="hljs-literal">false</span><br><br><span class="hljs-comment"># 允许覆盖，当相关控制文件(.aria2)不存在时从头开始重新下载，默认：false</span><br>allow-overwrite=<span class="hljs-literal">false</span><br><br><span class="hljs-comment"># 文件自动重命名，此选项仅在 HTTP(S)/FTP 下载中有效</span><br><span class="hljs-comment"># 新文件名在名称之后扩展名之前加上一个点和一个数字（1..9999），默认：true</span><br>auto-file-renaming=<span class="hljs-literal">true</span><br><br><span class="hljs-comment">### 客户端伪装 ###</span><br><br><span class="hljs-comment"># 自定义 User Agent</span><br>user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47<br><br><span class="hljs-comment">### RPC相关设置 ###</span><br><br><span class="hljs-comment"># 启用 JSON-RPC/XML-RPC 服务器，默认：false</span><br>enable-rpc=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 接受所有远程请求，默认：false</span><br>rpc-allow-origin-all=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 允许外部访问，默认：false</span><br>rpc-listen-all=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 事件轮询方式</span><br><span class="hljs-comment"># 可选：epoll、kqueue、port、poll、select，不同系统默认值不同</span><br><span class="hljs-comment">#event-poll=select</span><br><br><span class="hljs-comment"># RPC 监听端口，默认：6800</span><br>rpc-listen-port=6800<br><br><span class="hljs-comment"># RPC 最大请求大小</span><br>rpc-max-request-size=10M<br><br><span class="hljs-comment"># 设置的 RPC 授权密钥，取代 --rpc-user 和 --rpc-passwd 选项</span><br>rpc-secret=123456<br><br><span class="hljs-comment"># 是否启用 RPC 服务的 SSL/TLS 加密，默认：false</span><br><span class="hljs-comment"># 启用加密后必须使用 https 或者 wss 协议连接</span><br><span class="hljs-comment"># 不推荐开启，建议使用 web server 反向代理</span><br><span class="hljs-comment"># 比如 Nginx、Caddy，灵活性更强</span><br><span class="hljs-comment">#rpc-secure=true</span><br><br><span class="hljs-comment"># 在 RPC 服务中启用 SSL/TLS 加密时的证书文件,</span><br><span class="hljs-comment"># 使用 PEM 格式时，您必须通过 --rpc-private-key 指定私钥</span><br><span class="hljs-comment">#rpc-certificate=/path/to/certificate.pem</span><br><br><span class="hljs-comment"># 在 RPC 服务中启用 SSL/TLS 加密时的私钥文件</span><br><span class="hljs-comment">#rpc-private-key=/path/to/certificate.key</span><br><br><span class="hljs-comment">### BT/PT下载相关 ###</span><br><br><span class="hljs-comment"># BT 监听端口(TCP), 默认：6881-6999</span><br><span class="hljs-comment"># 直通外网的设备，比如 VPS ，务必配置防火墙和安全组策略允许此端口入站</span><br><span class="hljs-comment"># 内网环境的设备，比如 NAS ，除了防火墙设置，还需在路由器设置外网端口转发到此端口</span><br>listen-port=51413<br><br><span class="hljs-comment"># DHT 网络与 UDP tracker 监听端口(UDP), 默认:6881-6999</span><br><span class="hljs-comment"># 因协议不同，可以与 BT 监听端口使用相同的端口，方便配置防火墙和端口转发策略。</span><br>dht-listen-port=51413<br><br><span class="hljs-comment"># 下载种子文件(.torrent)自动开始下载，默认:true，可选如下</span><br><span class="hljs-comment"># true：保存种子文件</span><br><span class="hljs-comment"># false：仅下载种子文件</span><br><span class="hljs-comment"># mem：将种子保存在内存中</span><br>follow-torrent=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># BT 下载最大连接数（单任务），运行时可修改</span><br><span class="hljs-comment"># 0 为不限制，默认：55</span><br><span class="hljs-comment"># 理想情况下连接数越多下载越快，但在实际情况是只有少部分连接到的做种者上传速度快，其余的上传慢或者不上传</span><br><span class="hljs-comment"># 如果不限制，当下载非常热门的种子或任务数非常多时可能会因连接数过多导致进程崩溃或网络阻塞</span><br><span class="hljs-comment"># 进程崩溃：如果设备 CPU 性能一般，连接数过多导致 CPU 占用过高，因资源不足 Aria2 进程会强制被终结</span><br><span class="hljs-comment"># 网络阻塞：在内网环境下，即使下载没有占满带宽也会导致其它设备无法正常上网</span><br>bt-max-peers=64<br><br><span class="hljs-comment"># 打开DHT功能，PT需要禁用，默认:true</span><br>enable-dht=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 打开IPv6 DHT功能，PT需要禁用</span><br><span class="hljs-comment">#enable-dht6=false</span><br><br><span class="hljs-comment"># 本地节点查找，PT需要禁用，默认:false</span><br><span class="hljs-comment">#bt-enable-lpd=false</span><br><br><span class="hljs-comment"># 种子交换，PT需要禁用，默认:true</span><br>enable-peer-exchange=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># BT 下载期望速度值（单任务），运行时可修改</span><br><span class="hljs-comment"># 单位 K 或 M，默认：50K</span><br><span class="hljs-comment"># 下载速度低于此选项值时会临时提高连接数来获得更快的下载速度，不过前提是有更多的做种者可供连接</span><br><span class="hljs-comment"># 实测临时提高连接数没有上限，但不会像不做限制一样无限增加，会根据算法进行合理的动态调节</span><br>bt-request-peer-speed-limit=5M<br><br><span class="hljs-comment"># 客户端伪装，PT需要</span><br>peer-id-prefix=-TR2770-<br>user-agent=Transmission/2.77<br><br><span class="hljs-comment"># 最小分享率。当种子的分享率达到此选项设置的值时停止做种</span><br><span class="hljs-comment"># 0 为一直做种, 默认：1.0</span><br><span class="hljs-comment"># 强烈建议将此选项设置为大于等于 1.0</span><br>seed-ratio=1.0<br><br><span class="hljs-comment"># 最小做种时间（分钟）</span><br><span class="hljs-comment"># 设置为 0 时将在 BT 任务下载完成后停止做种</span><br>seed-time=30<br><br><span class="hljs-comment"># 做种前检查文件哈希，默认：true</span><br>bt-hash-check-seed=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 强制保存会话，即使任务已经完成，默认:false</span><br><span class="hljs-comment"># 较新的版本开启后会在任务完成后依然保留.aria2文件</span><br><span class="hljs-comment">#force-save=false</span><br><br><span class="hljs-comment"># 继续之前的BT任务时，无需再次校验，默认：false</span><br>bt-seed-unverified=<span class="hljs-literal">false</span><br><br><span class="hljs-comment"># 保存磁力链接元数据为种子文件(.torrent文件)，默认：false</span><br>bt-save-metadata=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># BT tracker 服务器连接超时时间（秒）。默认：60</span><br><span class="hljs-comment"># 建立连接后，此选项无效，将使用 bt-tracker-timeout 选项的值</span><br>bt-tracker-connect-timeout=45<br><br><span class="hljs-comment"># BT tracker 服务器超时时间（秒）。默认：60</span><br>bt-tracker-timeout=45<br><br><span class="hljs-comment"># BT tracker 服务器列表</span><br>bt-tracker=http://1337.abcvg.info:80/announce,http://bt.okmp3.ru:2710/announce,http://nyaa.tracker.wf:7777/announce,http://p2p.0g.cx:6969/announce,http://share.camoe.cn:8080/announce,http://t.acg.rip:6699/announce,http://t.nyaatracker.com:80/announce,http://torrentsmd.com:8080/announce,http://tr.cili001.com:8070/announce,http://tracker.bt4g.com:2095/announce,http://tracker.files.fm:6969/announce,http://tracker.gbitt.info:80/announce,http://tracker.k.vu:6969/announce,http://tracker.mywaifu.best:6969/announce,http://tracker.peckservers.com:9000/announce,http://tracker.renfei.net:8080/announce,http://tracker.tfile.co:80/announce,http://v6-tracker.0g.cx:6969/announce,http://vps-dd0a0715.vps.ovh.net:6969/announce,http://www.all4nothin.net:80/announce.php,http://www.wareztorrent.com:80/announce,https://1337.abcvg.info:443/announce,https://opentracker.i2p.rocks:443/announce,https://tr.burnabyhighstar.com:443/announce,https://tracker.foreverpirates.co:443/announce,https://tracker.gbitt.info:443/announce,https://tracker.jiesen.life:8443/announce,https://tracker.kuroy.me:443/announce,https://tracker.lilithraws.cf:443/announce,https://tracker.loligirl.cn:443/announce,https://tracker1.520.jp:443/announce,udp://9.rarbg.com:2810/announce,udp://aarsen.me:6969/announce,udp://acxx.de:6969/announce,udp://aegir.sexy:6969/announce,udp://astrr.ru:6969/announce,udp://bedro.cloud:6969/announce,udp://bt1.archive.org:6969/announce,udp://epider.me:6969/announce,udp://exodus.desync.com:6969/announce,udp://htz3.noho.st:6969/announce,udp://ipv6.fuuuuuck.com:6969/announce,udp://ipv6.tracker.monitorit4.me:6969/announce,udp://linfan.moe:6969/announce,udp://mail.artixlinux.org:6969/announce,udp://moonburrow.club:6969/announce,udp://movies.zsw.ca:6969/announce,udp://oh.fuuuuuck.com:6969/announce,udp://open.demonii.com:1337/announce,udp://open.dstud.io:6969/announce,udp://open.stealth.si:80/announce,udp://open.tracker.cl:1337/announce,udp://open.tracker.ink:6969/announce,udp://opentor.org:2710/announce,udp://opentracker.i2p.rocks:6969/announce,udp://opentracker.io:6969/announce,udp://p4p.arenabg.com:1337/announce,udp://private.anonseed.com:6969/announce,udp://retracker.hotplug.ru:2710/announce,udp://retracker01-msk-virt.corbina.net:80/announce,udp://run.publictracker.xyz:6969/announce,udp://sanincode.com:6969/announce,udp://static.54.161.216.95.clients.your-server.de:6969/announce,udp://t.133335.xyz:6969/announce,udp://thagoat.rocks:6969/announce,udp://thetracker.org:80/announce,udp://thouvenin.cloud:6969/announce,udp://torrents.artixlinux.org:6969/announce,udp://tracker.4.babico.name.tr:3131/announce,udp://tracker.altrosky.nl:6969/announce,udp://tracker.artixlinux.org:6969/announce,udp://tracker.auctor.tv:6969/announce,udp://tracker.birkenwald.de:6969/announce,udp://tracker.bitsearch.to:1337/announce,udp://tracker.cyberia.is:6969/announce,udp://tracker.dler.com:6969/announce,udp://tracker.doko.moe:6969/announce,udp://tracker.farted.net:6969/announce,udp://tracker.jonaslsa.com:6969/announce,udp://tracker.leech.ie:1337/announce,udp://tracker.moeking.me:6969/announce,udp://tracker.monitorit4.me:6969/announce,udp://tracker.openbittorrent.com:6969/announce,udp://tracker.opentrackr.org:1337/announce,udp://tracker.pimpmyworld.to:6969/announce,udp://tracker.skyts.net:6969/announce,udp://tracker.srv00.com:6969/announce,udp://tracker.theoks.net:6969/announce,udp://tracker.torrent.eu.org:451/announce,udp://tracker1.bt.moack.co.kr:80/announce,udp://tracker2.dler.com:80/announce,udp://u4.trakx.crim.ist:1337/announce,udp://u6.trakx.crim.ist:1337/announce,udp://uploads.gamecoast.net:6969/announce,udp://v1046920.hosted-by-vdsina.ru:6969/announce,udp://wepzone.net:6969/announce,ws://hub.bugout.link:80/announce,wss://tracker.openwebtorrent.com:443/announce<br><br><span class="hljs-comment"># 保存通过 WebUI(RPC) 上传的种子文件(.torrent)，默认：true</span><br><span class="hljs-comment"># 所有涉及种子文件保存的选项都建议开启，不保存种子文件有任务丢失的风险</span><br><span class="hljs-comment"># 通过 RPC 自定义临时下载目录可能不会保存种子文件</span><br>rpc-save-upload-metadata=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># BT强制加密, 默认: false</span><br><span class="hljs-comment"># 启用后将拒绝旧的 BT 握手协议并仅使用混淆握手及加密</span><br><span class="hljs-comment"># 可以解决部分运营商对 BT 下载的封锁，且有一定的防版权投诉与迅雷吸血效果</span><br><span class="hljs-comment"># 此选项相当于后面两个选项(bt-require-crypto=true, bt-min-crypto-level=arc4)的快捷开启方式，但不会修改这两个选项的值</span><br>bt-force-encryption=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># BT加密需求，默认：false</span><br><span class="hljs-comment"># 启用后拒绝与旧的 BitTorrent 握手协议(\19BitTorrent protocol)建立连接，始终使用混淆处理握手。</span><br><span class="hljs-comment">#bt-require-crypto=true</span><br><br><span class="hljs-comment"># BT最低加密等级，可选：plain（明文），arc4（加密），默认：plain</span><br><span class="hljs-comment">#bt-min-crypto-level=arc4</span><br><br><span class="hljs-comment">### 高级选项 ###</span><br><br><span class="hljs-comment"># 启用异步 DNS 功能，默认：true</span><br>async-dns=<span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 指定异步 DNS 服务器列表，未指定则从 /etc/resolv.conf 中读取。</span><br>async-dns-server=119.29.29.29,223.5.5.5,1.1.1.1,8.8.8.8,114.114.114.114<br><br><span class="hljs-comment"># 指定单个网络接口，可能的值：接口，IP地址，主机名</span><br><span class="hljs-comment"># 如果接口具有多个 IP 地址，则建议指定 IP 地址。</span><br><span class="hljs-comment"># 已知指定网络接口会影响依赖本地 RPC 的连接的功能场景，即通过 localhost 和 127.0.0.1 无法与 Aria2 服务端进行讯通。</span><br><span class="hljs-comment">#interface=</span><br><br><span class="hljs-comment"># 指定多个网络接口，多个值之间使用逗号(,)分隔。</span><br><span class="hljs-comment"># 使用 interface 选项时会忽略此项。</span><br><span class="hljs-comment">#multiple-interface=</span><br></code></pre></td></tr></table></figure>
+
+<p> 以下几项配置需要根据自己的情况进行更改：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">下面几项必须更改<br>dir = 下载路径<br><span class="hljs-keyword">log</span> = 日志 Aria2.<span class="hljs-keyword">log</span> 文件的保存路径<br><span class="hljs-keyword">input</span>-file = 读取下载任务的 aria2.<span class="hljs-keyword">session</span> 文件路径<br>save-<span class="hljs-keyword">session</span> = 会话 aria2.<span class="hljs-keyword">session</span> 文件保存路径<br>file-allocation = 文件预分配模式 <span class="hljs-keyword">none</span>|prealloc|trunc|falloc<br>rpc-secret = 自定义的 RPC 授权密钥<br>下面几项不重要，可根据情况更改<br>bt-tracker=自定义BT tracke 服务器列表<br></code></pre></td></tr></table></figure>
+
+
+
+<p>自定义BT tracke 服务器列表，可以在这里查看 <a target="_blank" rel="noopener" href="https://trackerslist.com/#/zh?id=aria2" title="XIU2/TrackersListCollection">XIU2&#x2F;TrackersListCollection</a> 查看，并复制粘贴到bt-tracker&#x3D;后面。</p>
+<p>配置文件全部改好保存后，在地址栏输入“cmd”后回车，打开CMD窗口，执行以下命令查看配置是否生效：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">aria2c.<span class="hljs-keyword">exe</span> --<span class="hljs-keyword">conf</span>-path=aria2.<span class="hljs-keyword">conf</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-配置-AriaNg-Native"><a href="#2-配置-AriaNg-Native" class="headerlink" title="2.配置 AriaNg Native"></a>2.配置 AriaN<img src="D:\tupian\5.jpg" srcset="/img/loading.gif" lazyload alt="5" style="zoom:25%;" />g Native</h3><p>双击打开”AriaNg_Native“文件夹中的”AriaNg Native.exe“。如下图，填入自定义的RPC密钥后点”重新加载 AriaNg“，Aria2 状态显示为绿色”已连接“。其他选项可根据自己需求自行设置。</p>
+<img src="D:\tupian\6.jpg" srcset="/img/loading.gif" lazyload alt="6" style="zoom:25%;" />
+
+
+
+<h3 id="3-配置启动脚本"><a href="#3-配置启动脚本" class="headerlink" title="3.配置启动脚本"></a>3.配置启动脚本</h3><p>每次使用命令行启动”aria2c.exe“再打开AriaNg_Native 很不方便，而且”Aria2.log“会随着使用次数增加越来越大。故编写了一个 vbs 脚本来快速启动，用文本编辑器（比如 <a target="_blank" rel="noopener" href="https://github.com/rizonesoft/Notepad3/releases" title="Notepad3">Notepad3</a>）打开 <code>start.vbs</code> 文件，复制粘贴下面的代码：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-variable">Dim</span> <span class="hljs-variable">ws</span><span class="hljs-operator">,</span><span class="hljs-variable">fso</span><br><span class="hljs-built_in">Set</span> <span class="hljs-variable">ws</span> <span class="hljs-operator">=</span> <span class="hljs-variable">Wscript</span><span class="hljs-operator">.</span><span class="hljs-variable">CreateObject</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Wscript.Shell&quot;</span><span class="hljs-punctuation">)</span><br><span class="hljs-built_in">Set</span> <span class="hljs-variable">fso</span> <span class="hljs-operator">=</span> <span class="hljs-variable">WScript</span><span class="hljs-operator">.</span><span class="hljs-variable">CreateObject</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Scripting.FileSystemObject&quot;</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-operator">&#x27;</span> 停止<span class="hljs-variable">aria2c</span><span class="hljs-operator">.</span><span class="hljs-variable">exe</span>进程<br><span class="hljs-built_in">Set</span> <span class="hljs-variable">colProcessList</span> <span class="hljs-operator">=</span> <span class="hljs-variable">GetObject</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Winmgmts:&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-operator">.</span><span class="hljs-variable">ExecQuery</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Select * from Win32_Process Where Name=&#x27;aria2c.exe&#x27;&quot;</span><span class="hljs-punctuation">)</span><br><span class="hljs-built_in">For</span> <span class="hljs-variable">Each</span> <span class="hljs-variable">objProcess</span> <span class="hljs-built_in">In</span> <span class="hljs-variable">colProcessList</span><br>    <span class="hljs-variable">objProcess</span><span class="hljs-operator">.</span><span class="hljs-variable">Terminate</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><br><span class="hljs-built_in">Next</span><br><br><span class="hljs-operator">&#x27;</span> 等待<span class="hljs-variable">aria2c</span><span class="hljs-operator">.</span><span class="hljs-variable">exe</span>进程完全停止<br><span class="hljs-built_in">Do</span><br>    <span class="hljs-built_in">Set</span> <span class="hljs-variable">colProcessList</span> <span class="hljs-operator">=</span> <span class="hljs-variable">GetObject</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Winmgmts:&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-operator">.</span><span class="hljs-variable">ExecQuery</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Select * from Win32_Process Where Name=&#x27;aria2c.exe&#x27;&quot;</span><span class="hljs-punctuation">)</span><br>    <span class="hljs-built_in">If</span> <span class="hljs-variable">colProcessList</span><span class="hljs-operator">.</span><span class="hljs-built_in">Count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> <span class="hljs-variable">Then</span> <span class="hljs-built_in">Exit</span> <span class="hljs-built_in">Do</span><br>    <span class="hljs-variable">WScript</span><span class="hljs-operator">.</span><span class="hljs-variable">Sleep</span> <span class="hljs-number">500</span><br><span class="hljs-variable">Loop</span><br><br><span class="hljs-operator">&#x27;</span> 删除<span class="hljs-variable">Aria2</span><span class="hljs-operator">.</span><span class="hljs-variable">log</span><span class="hljs-operator">.</span><span class="hljs-variable">bak</span><br><span class="hljs-built_in">If</span> <span class="hljs-variable">fso</span><span class="hljs-operator">.</span><span class="hljs-variable">FileExists</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Aria2.log.bak&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-variable">Then</span><br>    <span class="hljs-variable">fso</span><span class="hljs-operator">.</span><span class="hljs-built_in">DeleteFile</span> <span class="hljs-string">&quot;Aria2.log.bak&quot;</span><br><span class="hljs-built_in">End</span> <span class="hljs-built_in">If</span><br><br><span class="hljs-operator">&#x27;</span> 重命名<span class="hljs-variable">Aria2</span><span class="hljs-operator">.</span><span class="hljs-variable">log</span>为<span class="hljs-variable">Aria2</span><span class="hljs-operator">.</span><span class="hljs-variable">log</span><span class="hljs-operator">.</span><span class="hljs-variable">bak</span><br><span class="hljs-built_in">If</span> <span class="hljs-variable">fso</span><span class="hljs-operator">.</span><span class="hljs-variable">FileExists</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Aria2.log&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-variable">Then</span><br>    <span class="hljs-variable">fso</span><span class="hljs-operator">.</span><span class="hljs-variable">MoveFile</span> <span class="hljs-string">&quot;Aria2.log&quot;</span><span class="hljs-operator">,</span> <span class="hljs-string">&quot;Aria2.log.bak&quot;</span><br><span class="hljs-built_in">End</span> <span class="hljs-built_in">If</span><br><br><span class="hljs-operator">&#x27;</span> 创建一个空的<span class="hljs-variable">Aria2</span><span class="hljs-operator">.</span><span class="hljs-variable">log</span>文件<br><span class="hljs-built_in">Set</span> <span class="hljs-variable">file</span> <span class="hljs-operator">=</span> <span class="hljs-variable">fso</span><span class="hljs-operator">.</span><span class="hljs-variable">CreateTextFile</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Aria2.log&quot;</span><span class="hljs-operator">,</span> <span class="hljs-built_in">True</span><span class="hljs-punctuation">)</span><br><span class="hljs-variable">file</span><span class="hljs-operator">.</span><span class="hljs-built_in">Close</span><br><br><span class="hljs-operator">&#x27;</span> 运行<span class="hljs-variable">aria2c</span><span class="hljs-operator">.</span><span class="hljs-variable">exe</span>和<span class="hljs-variable">AriaNg</span> <span class="hljs-variable">Native</span><br><span class="hljs-variable">ws</span><span class="hljs-operator">.</span><span class="hljs-variable">run</span> <span class="hljs-string">&quot;aria2c.exe --conf-path=aria2.conf&quot;</span><span class="hljs-operator">,</span><span class="hljs-variable">vbhide</span><br><span class="hljs-variable">ws</span><span class="hljs-operator">.</span><span class="hljs-variable">run</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;D:\Aria2\AriaNg_Native\AriaNg Native.exe&quot;</span><span class="hljs-string">&quot;&quot;</span><br><span class="hljs-variable">Wscript</span><span class="hljs-operator">.</span><span class="hljs-variable">quit</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>其中”AriaNg Native.exe“的路径根据自己的情况进行更改。</strong></p>
+<p>保存后，双击 <code>start.vbs</code> ，会将旧的”Aria2.log”文件备份，并创建新的”Aria2.log”文件，同时启动”aria2c.exe“和 AriaNg_Native。</p>
+<p>如下图，可以右键 <code>start.vbs</code> 创建一个快捷方式，把名称和图标更改为自己喜欢的。可以把这个快捷方式复制到其他地方，来快速启动”aria2c.exe“和 AriaNg_Native。</p>
+<img src="D:\tupian\7.jpg" srcset="/img/loading.gif" lazyload alt="7" style="zoom:25%;" />
+
+<p>到这里教程就结束了，希望大家用得开心。</p>
+<hr>
+<p>参考：</p>
+<blockquote>
+<p>[Win10 Aria2 配置 (notion.site)</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Win10/" class="category-chain-item">Win10</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%99%A8/" class="print-no-link">#下载器</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Win10_Aria_配置</div>
+      <div>http://example.com/page/24n1y20r20s58f.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>dzq88</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年1月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/page/24n2y18r23s27f.html" title="hexo写文章步骤">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">hexo写文章步骤</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/page/24n1y20r20s12f.html" title="Win10搭建KMS服务器">
+                        <span class="hidden-mobile">Win10搭建KMS服务器</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"BPkOS3pmXfT74qEy262M60hO-MdYXbMMI","appKey":"dnbkWPBTir2qFiQ3xZrZoLUz","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://bpkos3pm.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>   
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
